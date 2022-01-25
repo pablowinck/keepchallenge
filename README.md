@@ -22,9 +22,8 @@
 
 ## Table of Contents
 
-- [Overview](#overview)
-  - [Built With](#built-with)
-- [Features](#features)
+
+- [Built With](#built-with)
 - [How to use](#how-to-use)
 - [Contact](#contact)
 
