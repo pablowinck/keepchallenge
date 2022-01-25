@@ -4,7 +4,7 @@ import Document, {
     Head,
     Html,
     Main,
-    NextScript,
+    NextScript
 } from 'next/document';
 import React from 'react';
 import { ServerStyleSheet } from 'styled-components';
@@ -20,7 +20,7 @@ export default class MyDocument extends Document {
             ctx.renderPage = () =>
                 originalRenderPage({
                     enhanceApp: (App) => (props) =>
-                        sheet.collectStyles(<App {...props} />),
+                        sheet.collectStyles(<App {...props} />)
                 });
 
             const initialProps = await Document.getInitialProps(ctx);
@@ -31,7 +31,7 @@ export default class MyDocument extends Document {
                         {initialProps.styles}
                         {sheet.getStyleElement()}
                     </>
-                ),
+                )
             };
         } finally {
             sheet.seal();
@@ -45,9 +45,9 @@ export default class MyDocument extends Document {
                     <meta charSet="utf-8" />
 
                     <link
-                        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap"
+                        href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;400;500;600;700&display=swap"
                         rel="stylesheet"
-                    ></link>
+                    />
                 </Head>
                 <body>
                     <Main />
