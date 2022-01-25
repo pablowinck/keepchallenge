@@ -6,6 +6,10 @@ export const Container = styled.form`
     gap: 1.5rem;
 
     height: 100%;
+
+    @media (max-width: 768px) {
+        gap: 0.5rem;
+    }
 `;
 export const Input = styled.input`
     width: 29.75rem;
@@ -19,6 +23,10 @@ export const Input = styled.input`
         outline: none;
 
         border-color: ${(props) => props.theme.colors.text.light};
+    }
+
+    @media (max-width: 768px) {
+        width: 12rem;
     }
 `;
 export const Button = styled.button`
