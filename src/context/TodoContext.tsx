@@ -1,7 +1,7 @@
 import { createContext, useContext, useState } from 'react';
 
 export type Todo = {
-    id: number;
+    id: string;
     text: string;
     completed: boolean;
 };
@@ -9,8 +9,8 @@ export type Todo = {
 type TodoContextType = {
     todos: Todo[];
     addTodo: (todo: Todo) => void;
-    removeTodo: (id: number) => void;
-    toggleTodo: (id: number) => void;
+    removeTodo: (id: string) => void;
+    toggleTodo: (id: string) => void;
     removeAllTodos: () => void;
 };
 
@@ -20,10 +20,11 @@ const TodoContextProvider: React.FC = ({ children }) => {
     const [todos, setTodos] = useState<Todo[]>([]);
 
     const addTodo = (todo: Todo): void => {
+        console.log(todo);
         setTodos((currentTodos) => [...currentTodos, todo]);
     };
 
-    const removeTodo = (id: number): void => {
+    const removeTodo = (id: string): void => {
         setTodos(todos.filter((todo) => todo.id !== id));
     };
 
@@ -31,7 +32,7 @@ const TodoContextProvider: React.FC = ({ children }) => {
         setTodos(todos.filter((todo) => !todo.completed));
     };
 
-    const toggleTodo = (id: number): void => {
+    const toggleTodo = (id: string): void => {
         setTodos((currentTodos) =>
             currentTodos.map((currentTodo) =>
                 currentTodo.id === id

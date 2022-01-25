@@ -7,8 +7,19 @@ import { Container, Todos } from './styles';
 
 const AllContent: React.FC = () => {
     const { todos } = useTodoContext();
+
+    const getDuration = (index: number): number => {
+        const max = 1;
+        const duration = index * 0.1;
+
+        return duration >= max ? max : duration;
+    };
     return (
-        <Container>
+        <Container
+            initial={{ x: 100, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            exit={{ x: -100, opacity: 0 }}
+        >
             <AddTodo />
             <Todos>
                 {todos.map((todo, index) => (
@@ -16,7 +27,7 @@ const AllContent: React.FC = () => {
                         key={index}
                         initial={{ y: -20, opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
-                        transition={{ duration: 0.1 * index }}
+                        transition={{ duration: getDuration(index) }}
                     >
                         <TodoItem todo={todo} />
                     </motion.div>

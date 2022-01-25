@@ -1,6 +1,6 @@
 import MenuItem from 'components/MenuItem';
 import React, { useState } from 'react';
-import { Container, Content, Menu, Title } from './styles';
+import { Container, Content, Footer, Menu, Title } from './styles';
 
 type Props = {
     children: React.ReactNode;
@@ -45,6 +45,14 @@ const Layout: React.FC<Props> = ({ children, selected, setSelected }) => {
                 ))}
             </Menu>
             <Content>{children}</Content>
+            <Footer>
+                <p>
+                    created by{' '}
+                    <a href="https://twitch.tv/devpablowinter">
+                        devpablowinter
+                    </a>
+                </p>
+            </Footer>
         </Container>
     );
 };

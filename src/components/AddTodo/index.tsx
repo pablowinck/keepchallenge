@@ -1,14 +1,14 @@
 import { Todo, useTodoContext } from 'context/TodoContext';
 import React, { useState } from 'react';
+import short from 'short-uuid';
 import { Button, Container, Input } from './styles';
-
 const AddTodo: React.FC = () => {
-    const { addTodo, todos } = useTodoContext();
+    const { addTodo } = useTodoContext();
     const [text, setText] = useState<string>('');
 
     const handleClick = () => {
         const todo: Todo = {
-            id: todos.length + 1,
+            id: short.generate(),
             text: text,
             completed: false
         };

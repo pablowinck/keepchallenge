@@ -25,3 +25,13 @@ export const Menu = styled.div`
     margin-top: 3rem;
 `;
 export const Content = styled.div``;
+export const Footer = styled.div`
+    position: fixed;
+    bottom: 1rem;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    color: ${(props) => props.theme.colors.text.light};
+`;
